@@ -1,25 +1,35 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import  ButtonAppBar  from "./components/app-bar";
+import  UserList  from "./components/userlist";
+import { Container } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+const users=[
+  {
+    name : "name1",
+    age : 10
+  },
+  {
+    name : "name2",
+    age : 20
+  }
+]
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <div>
+       <ButtonAppBar/>
+       <Container>
+         <UserList users = {users}/>
+       </Container>
+       <Button variant="contained" color="secondary">
+        Add User
+      </Button>
+      <input type="text" name="Name:"/>
+      <input type="number" name="Age:"/>
+
+   </div>
+  
   );
 }
 
